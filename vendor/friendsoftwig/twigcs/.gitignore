@@ -1,0 +1,6 @@
+/vendor/
+/bin/
+!/bin/twigcs
+composer.lock
+twigcs.phar
+.phpunit.result.cache

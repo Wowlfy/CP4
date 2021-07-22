@@ -1,0 +1,26 @@
+{% extends 'email/layoutEmail.html.twig' %}
+
+{% block title %}Candidature - {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <h2>Nouvelle candidature pour {{ job.company.companyName }}</h2>
+    <p>Bonjour,</p>
+    <p>Un étudiant a confirmé vouloir postuler à l'offre : "{{ job.post }}"
+    postée par l'entreprise : "{{ job.company.companyName|upper }}"
+    située à {{ job.city|capitalize }} ({{ job.postalCode }}).</p>
+    <table style="border: 0;">
+        <tr>
+            <td>Étudiant à contacter : </td>
+            <td>{{ user.lastname|upper }} {{ user.firstname }}</td>
+        </tr>
+        <tr>
+            <td>Téléphone: </td>
+            <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+            <td>Adresse mail: </td>
+            <td>{{ user.email }}</td>
+        </tr>
+    </table>
+{% endblock %}
